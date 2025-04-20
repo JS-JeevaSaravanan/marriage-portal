@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { siteConfig, siteMetadata } from '@/app/constants/site';
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Heart className="h-6 w-6 text-rose-500" />
-              <span className="font-bold text-xl text-primary">HeartMatch</span>
+              <span className="font-bold text-xl text-primary">{`${siteConfig.name}`}</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Connecting hearts, creating futures. Find your perfect match with our trusted matrimonial service.
@@ -73,7 +74,7 @@ export default function Footer() {
             <h4 className="font-medium text-lg mb-4">Contact Us</h4>
             <ul className="space-y-2">
               <li className="text-muted-foreground text-sm">
-                support@heartmatch.com
+                 {`${siteMetadata.contact.email}`}
               </li>
               <li className="text-muted-foreground text-sm">
                 +1 (800) 123-4567
@@ -91,7 +92,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} HeartMatch. All rights reserved.
+            {`© ${new Date().getFullYear()} ${siteConfig.name}. All rights reserved.`}
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="text-muted-foreground hover:text-primary">

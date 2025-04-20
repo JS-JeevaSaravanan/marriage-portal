@@ -60,6 +60,11 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        // primary: '#c0392b',       // deep red
+        // secondary: '#f4e1d2',     // soft peach
+        // accent: '#e67e22',        // warm orange
+        // background: '#fffaf5',    // light ivory
+        // muted: '#7f8c8d',         // gray text
       },
       keyframes: {
         'accordion-down': {

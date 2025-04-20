@@ -5,12 +5,13 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/providers/ThemeProvider';
+import { siteConfig } from "@/app/constants/site";
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'HeartMatch - Find Your Perfect Life Partner',
-  description: 'A modern matrimonial platform to help you find your perfect life partner based on your preferences and values.',
+  title: `${siteConfig.name} - ${siteConfig.shortDescription}`, 
+  description: siteConfig.description,
 };
 
 export default function RootLayout({

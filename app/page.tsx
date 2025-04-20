@@ -8,6 +8,7 @@ import { profiles } from "@/lib/mock-data";
 import ProfileList from "@/components/profile/ProfileList";
 import { Heart, Users, Search, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { siteConfig } from "./constants/site";
 
 // Adding framer-motion for animations
 // TODO: Install with: npm install framer-motion
@@ -91,7 +92,9 @@ export default function Home() {
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">
-              Why Choose HeartMatch?
+               {
+                `Why Choose ${siteConfig.name}?`
+               }
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
               We're dedicated to helping you find your perfect life partner with our
@@ -194,11 +197,11 @@ export default function Home() {
                 </h2>
                 <div className="mt-6 bg-background rounded-xl p-6 shadow-sm border">
                   <p className="text-lg italic text-muted-foreground">
-                    "We matched on HeartMatch in January and immediately felt a
+                    {`We matched on ${siteConfig.name} in January and immediately felt a
                     connection. After a few months of getting to know each
                     other, we knew we had found our life partners. We're now
-                    happily married and can't thank HeartMatch enough for
-                    bringing us together!"
+                    happily married and can't thank ${siteConfig.name} enough for
+                    bringing us together!`}
                   </p>
                   <div className="mt-4 flex items-center">
                     <div className="ml-4">
@@ -228,8 +231,7 @@ export default function Home() {
               Ready to Find Your Perfect Match?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Join thousands of singles who have already found their life
-              partner through HeartMatch.
+              {`Join thousands of singles who have already found their life partner through ${siteConfig.name}.`}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/register">

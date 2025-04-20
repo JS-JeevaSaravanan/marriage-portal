@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Heart, MessageCircle, Search, User, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/app/constants/site";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,7 +62,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-rose-500" />
-            <span className="font-bold text-xl text-primary">HeartMatch</span>
+            <span className="font-bold text-xl text-primary">{siteConfig.name}</span>
           </Link>
 
           {/* Desktop Navigation */}
