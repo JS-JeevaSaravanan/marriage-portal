@@ -1,20 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { profiles } from "@/lib/mock-data";
 import ProfileList from "@/components/profile/ProfileList";
 import SearchFilters from "@/components/search/SearchFilters";
 import { Button } from "@/components/ui/button";
 import { Filter } from "lucide-react";
 
+// Define types for filters
+interface FilterCriteria {
+  gender?: string;
+  ageMin?: number;
+  ageMax?: number;
+  location?: string;
+  religion?: string;
+  heightMin?: number;
+  heightMax?: number;
+  education?: string[];
+  occupation?: string;
+}
+
 export default function DiscoverPage() {
   const [filteredProfiles, setFilteredProfiles] = useState(profiles);
   const [showFilters, setShowFilters] = useState(false);
-  const [appliedFilters, setAppliedFilters] = useState<any>({});
 
-  const handleApplyFilters = (filters: any) => {
-    setAppliedFilters(filters);
-
+  const handleApplyFilters = (filters: FilterCriteria) => {
     // Filter profiles based on criteria
     const filtered = profiles.filter((profile) => {
       // Gender filter

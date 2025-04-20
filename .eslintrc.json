@@ -1,0 +1,82 @@
+{
+  "extends": [
+    "next/core-web-vitals", // Next.js core web vitals
+    "next/typescript", // TypeScript-specific rules for Next.js
+    "plugin:react/recommended", // React-specific rules
+    "plugin:react-hooks/recommended", // React Hooks rules
+    "plugin:@typescript-eslint/recommended" // TypeScript rules
+  ],
+  "plugins": [
+    "fp", // Functional programming plugin
+    "react", // React plugin for JSX/React-specific linting
+    "react-hooks", // React Hooks plugin
+    "@typescript-eslint" // TypeScript plugin
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "prefer-const": "error", // Encourage the use of `const` for variables that are not reassigned
+    "no-magic-numbers": ["warn", { "ignore": [0, 1] }], // Avoid magic numbers
+    "no-var": "error", // Disallow `var` in favor of `let` and `const`
+    "prefer-arrow-callback": "error", // Encourage arrow functions for callbacks
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "FunctionExpression",
+        "message": "Use arrow functions instead."
+      },
+      {
+        "selector": "ForInStatement",
+        "message": "Avoid `for...in` loops in favor of `Object.keys` or `Object.entries`."
+      },
+      {
+        "selector": "ForStatement",
+        "message": "Avoid `for` loops, use map/filter/reduce instead."
+      },
+      {
+        "selector": "CallExpression[callee.property.name='apply']",
+        "message": "Avoid using Function.prototype.apply"
+      },
+      {
+        "selector": "CallExpression[callee.property.name='call']",
+        "message": "Avoid using Function.prototype.call"
+      }
+    ],
+    "array-callback-return": "error", // Ensure that array methods return a value (e.g., `map`, `filter`)
+    "no-param-reassign": "error", // Disallow reassignment of function parameters
+    "no-console": "warn", // Avoid side-effects from `console.log`
+    "no-plusplus": "error", // Avoid using `++` or `--` operators
+    "no-implicit-globals": "error", // Disallow the use of global variables
+    "@typescript-eslint/no-explicit-any": "error", // Avoid using `any` type
+    "fp/no-mutating-methods": "error", // Prevent mutating methods on arrays/objects
+    "fp/no-loops": "error", // Prevent loops (if using `eslint-plugin-fp`)
+    "fp/no-arguments": "error", // Prevent the use of `arguments`
+    "fp/no-this": "error", // Prevent the use of `this`
+    "fp/no-mutating-assignments": "error", // Avoid direct mutations of variables
+    "fp/no-mutating-variables": "error", // Prevent variable mutation (use const)
+    "fp/no-pure-functions": "error", // Enforce pure functions, avoid side effects
+    "react/prop-types": "off", // Next.js with TypeScript usually doesn't require prop-types
+    "react/react-in-jsx-scope": "off", // Not necessary with Next.js (React is auto-included in Next.js)
+    "react/jsx-uses-react": "off", // Next.js automatically handles JSX imports
+    "react/jsx-uses-vars": "error", // Ensure JSX elements are used correctly
+    "react-hooks/rules-of-hooks": "error", // Enforce React Hooks rules
+    "react-hooks/exhaustive-deps": "warn", // Ensure useEffect dependencies are set correctly
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Optional: Disable rule for explicit return types on functions
+    "@typescript-eslint/ban-ts-comment": "warn", // Warn about `@ts-ignore` usage
+    "@typescript-eslint/explicit-function-return-type": "warn" // Warn about missing function return types
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "warn" // Warn if `any` is used in TypeScript files
+      }
+    }
+  ]
+}

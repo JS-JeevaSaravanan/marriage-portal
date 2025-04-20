@@ -46,9 +46,7 @@ export default function SearchFilters({
 
   const handleEducationChange = (checked: boolean, value: string) => {
     setEducation((prev) =>
-      checked
-        ? [...prev, value]
-        : prev.filter((item) => item !== value)
+      checked ? [...prev, value] : prev.filter((item) => item !== value)
     );
   };
 
@@ -62,7 +60,7 @@ export default function SearchFilters({
     if (occupation) count++;
     if (ageRange[0] !== 21 || ageRange[1] !== 45) count++;
     if (heightRange[0] !== 150 || heightRange[1] !== 190) count++;
-    
+
     setActiveFiltersCount(count);
 
     // Create filters object
@@ -95,7 +93,7 @@ export default function SearchFilters({
     setAgeRange([21, 45]);
     setHeightRange([150, 190]);
     setActiveFiltersCount(0);
-    
+
     onApplyFilters({});
   };
 
@@ -112,7 +110,10 @@ export default function SearchFilters({
           <Filter className="h-4 w-4 mr-2" />
           Filters
           {activeFiltersCount > 0 && (
-            <Badge className="ml-2 bg-primary text-primary-foreground" variant="default">
+            <Badge
+              className="ml-2 bg-primary text-primary-foreground"
+              variant="default"
+            >
               {activeFiltersCount}
             </Badge>
           )}
@@ -122,7 +123,7 @@ export default function SearchFilters({
             <ChevronDown className="h-4 w-4 ml-2" />
           )}
         </Button>
-        
+
         {activeFiltersCount > 0 && (
           <Button
             variant="ghost"
@@ -280,7 +281,10 @@ export default function SearchFilters({
         </div>
 
         <div className="p-4">
-          <Button className="w-full bg-rose-500 hover:bg-rose-600" onClick={handleApplyFilters}>
+          <Button
+            className="w-full bg-rose-500 hover:bg-rose-600"
+            onClick={handleApplyFilters}
+          >
             Apply Filters
           </Button>
         </div>

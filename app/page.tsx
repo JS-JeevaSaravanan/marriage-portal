@@ -6,18 +6,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { profiles } from "@/lib/mock-data";
 import ProfileList from "@/components/profile/ProfileList";
-import { Heart, Users, Search, Shield } from "lucide-react";
+import { Heart, Users, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "./constants/site";
-
-// Adding framer-motion for animations
-// TODO: Install with: npm install framer-motion
 
 export default function Home() {
   const [randomProfiles, setRandomProfiles] = useState(profiles);
 
   useEffect(() => {
-    // Get a random subset of profiles
     const shuffled = [...profiles].sort(() => 0.5 - Math.random());
     setRandomProfiles(shuffled.slice(0, 4));
   }, []);
@@ -30,7 +26,7 @@ export default function Home() {
         <div className="container px-4 relative">
           <div className="flex flex-col lg:flex-row items-center max-w-6xl mx-auto">
             <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0 text-center lg:text-left">
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -39,7 +35,7 @@ export default function Home() {
                 Find Your Perfect{" "}
                 <span className="text-rose-500">Life Partner</span>
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="mt-4 md:mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -49,14 +45,17 @@ export default function Home() {
                 through our trusted matrimonial service. Start your journey to
                 forever today.
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <Link href="/register">
-                  <Button size="lg" className="bg-rose-500 hover:bg-rose-600 text-white px-8">
+                  <Button
+                    size="lg"
+                    className="bg-rose-500 hover:bg-rose-600 text-white px-8"
+                  >
                     Get Started
                   </Button>
                 </Link>
@@ -67,7 +66,7 @@ export default function Home() {
                 </Link>
               </motion.div>
             </div>
-            <motion.div 
+            <motion.div
               className="lg:w-1/2 relative"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -92,13 +91,11 @@ export default function Home() {
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">
-               {
-                `Why Choose ${siteConfig.name}?`
-               }
+              {`Why Choose ${siteConfig.name}?`}
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              We're dedicated to helping you find your perfect life partner with our
-              advanced matching system and secure platform.
+              We&apos;re dedicated to helping you find your perfect life partner
+              with our advanced matching system and secure platform.
             </p>
           </div>
 
@@ -128,18 +125,7 @@ export default function Home() {
 
             <div className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4">
-                <Search className="text-blue-500 h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Advanced Search</h3>
-              <p className="text-muted-foreground">
-                Filter profiles by age, location, religion, education, and more
-                to find exactly what you're looking for in a life partner.
-              </p>
-            </div>
-
-            <div className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-4">
-                <Shield className="text-amber-500 h-6 w-6" />
+                <Shield className="text-blue-500 h-6 w-6" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Privacy & Security</h3>
               <p className="text-muted-foreground">
@@ -199,8 +185,8 @@ export default function Home() {
                   <p className="text-lg italic text-muted-foreground">
                     {`We matched on ${siteConfig.name} in January and immediately felt a
                     connection. After a few months of getting to know each
-                    other, we knew we had found our life partners. We're now
-                    happily married and can't thank ${siteConfig.name} enough for
+                    other, we knew we had found our life partners. We&apos;re now
+                    happily married and can&apos;t thank ${siteConfig.name} enough for
                     bringing us together!`}
                   </p>
                   <div className="mt-4 flex items-center">
@@ -235,7 +221,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/register">
-                <Button size="lg" className="bg-rose-500 hover:bg-rose-600 text-white px-8">
+                <Button
+                  size="lg"
+                  className="bg-rose-500 hover:bg-rose-600 text-white px-8"
+                >
                   Sign Up Now
                 </Button>
               </Link>
