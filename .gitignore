@@ -25,3 +25,6 @@ Thumbs.db
 # Testing
 coverage/
 jest.cache/
+
+# Cypress screenshots
+cypress/screenshots/
